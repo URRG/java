@@ -19,3 +19,13 @@ public class Calculator {
     int result = numOne / numTwo;
     System.out.println(numOne + " / " + numTwo + " = " + result);
   }
+
+  public static void main(String[] args) {
+    int numOne = Integer.parseInt(args[0]);
+    int numTwo = Integer.parseInt(args[1]);
+    add(numOne, numTwo);
+    subtract(numOne, numTwo);
+    multiply(numOne, numTwo);
+    divide(numOne, numTwo);
+  }
+}
