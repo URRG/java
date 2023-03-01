@@ -94,6 +94,50 @@ public class Crc {
 		for (int i =N-n+1; i<N; i++) {
 			modifiedBits.add(dividendBits.get(i));
 		}
+		int check_size =dividendBits.size();
+		int check_array[]=new int[check_size];
 		
-
+		System.out.println("\n Enter recieved bit data: ");
+		for(int i = 0; i<check_array.length; i++) {
+			check_array[i] = sc_1.nextInt();
+		}
+		for(int i = 0; i<check_array.length; i++) {
+			recievedBits.add(check_array[i]); //entering into vector
+		}
 		
+		for(int i =0 ; i<recievedBits.size(); i++) {
+			System.out.print(recievedBits.get(i));
+		}
+		
+		for(int i =0; i< N-n+1; i++) {
+			if(recievedBits.get(i) == 0) {
+				for(int j = 0; j<n ; j++) {
+					int x = recievedBits.get(i+j)^0;
+					recievedBits.set(i+j, x);
+				}
+			}
+			else {
+				for(int j = 0; j<n ; j++) {
+					int y = recievedBits.get(i+j)^ divisorBits.get(j);
+					recievedBits.set(i+j, y);
+				}
+			}
+		}
+		
+		System.out.println("\nAfter checking the remainder comes out to be:");
+		for(int i =0 ; i<recievedBits.size(); i++) {
+			System.out.print(recievedBits.get(i));
+		}
+		for(int i =0; i<recievedBits.size(); i++) {
+			if(recievedBits.get(i) == 1) {
+				count=count+1;
+			}
+		}
+		if(count!=0) {
+			System.out.println("\n Bits flipped");
+		}
+		sc.close();
+		sc_1.close();
+		
+	}
+}
