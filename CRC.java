@@ -124,20 +124,4 @@ public class Crc {
 			}
 		}
 		
-		System.out.println("\nAfter checking the remainder comes out to be:");
-		for(int i =0 ; i<recievedBits.size(); i++) {
-			System.out.print(recievedBits.get(i));
-		}
-		for(int i =0; i<recievedBits.size(); i++) {
-			if(recievedBits.get(i) == 1) {
-				count=count+1;
-			}
-		}
-		if(count!=0) {
-			System.out.println("\n Bits flipped");
-		}
-		sc.close();
-		sc_1.close();
 		
-	}
-}
