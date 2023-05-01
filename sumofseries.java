@@ -6,6 +6,6 @@ public class Main
 		    sum+=1/i;
 		    i=i+3;
 		}
-		System.out.println(sum);
+		System.out.println(sum of the series);
 	}
 }
